@@ -5,13 +5,13 @@ import java.util.ArrayList;
 
 public class ReadFile {
     public ReadFile() {};
+    public ArrayList<String> filePaths = new ArrayList<String>();
     /**
      * 此方法返回的路径中带\符号
      * @param file
      * @return ArrayList<String>
      */
-    public static ArrayList<String> readFile(File file) {
-        ArrayList<String> filePaths = new ArrayList<String>();
+    public ArrayList<String> readFile(File file) {
         File[] files = file.listFiles();
         for (File f : files) {
             if (f.isDirectory()) {
@@ -29,14 +29,14 @@ public class ReadFile {
      * @param file
      * @return ArrayList<String>
      */
-    public static ArrayList<String> getFilePaths(File file) {
-        ArrayList<String> filePaths = readFile(file);
+    public ArrayList<String> getFilePaths(File file) {
+        ArrayList<String> returnFilePaths = readFile(file);
         String stringTemp = "";
-        for (int i = 0; i < filePaths.size(); i++) {
-            stringTemp = filePaths.get(i).replace("\\","/");
-            filePaths.remove(i);
-            filePaths.add(i,stringTemp);
+        for (int i = 0; i < returnFilePaths.size(); i++) {
+            stringTemp = returnFilePaths.get(i).replace("\\","/");
+            returnFilePaths.remove(i);
+            returnFilePaths.add(i,stringTemp);
         }
-        return filePaths;
+        return returnFilePaths;
     }
 }
