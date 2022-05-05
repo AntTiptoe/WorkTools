@@ -16,11 +16,11 @@ import java.util.ArrayList;
 public class LogAnalysisMain {
     private final static String logTimestampContentStartSign = "[";                          //设置日志中含时间戳的内容开始标志
     private final static long overTimeSize = 10;                                             //设置超时范围，一旦日志的时间戳差大于这个值，我们就认为该块用时异常
-    private final static String logsDir = "C:/Users/92497/Desktop/log/";                  //设置日志存放路径
-    private final static String analysisLogDir = "E:/Test/analysis/";                     //设置分析日志存放路径，自动创建不存在的文件夹
+    private final static String logsDir = "C:/Users/92497/Desktop/logs/";                  //设置日志存放路径
+    private final static String analysisLogDir = "D:/Test/analysis/";                     //设置分析日志存放路径，自动创建不存在的文件夹
     public static void main(String[] args) {
         File file = new File(logsDir);
-        ArrayList<String> filePaths = ReadFile.getFilePaths(file);
+        ArrayList<String> filePaths = new ReadFile().getFilePaths(file);
         AnalysisDo analysisDo = AnalysisDo.getAnalysisDo();
         for (String pathString: filePaths) {
             String analysisLogPath = analysisDo.analysisLogDo(logTimestampContentStartSign, overTimeSize, pathString, analysisLogDir,"utf-8");
