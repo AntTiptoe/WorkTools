@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="WorkTools:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/WorkTools_jar</output-path>
+    <root id="archive" name="WorkTools.jar">
+      <element id="module-output" name="WorkTools" />
+    </root>
+  </artifact>
+</component>
