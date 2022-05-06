@@ -63,9 +63,4 @@ public class FileTools {
             e.printStackTrace();
         }
     }
-
-    public static String getEncoding(String filePath) {
-
-        return null;
-    }
 }
